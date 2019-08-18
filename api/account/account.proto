@@ -1,0 +1,28 @@
+syntax="proto3";
+
+package account;
+
+message BalanceRequest {
+    string address = 1;
+}
+
+message BalanceResponse {
+    int64 balance = 1;
+    Response reponse = 2;
+}
+
+message Response {
+    Status status = 1;
+}
+
+enum Status {
+    FAILURE = 0;
+    SUCCESS = 1;
+}
+
+service Account {
+    rpc getBalance (BalanceRequest) returns (BalanceResponse);
+}
+
+
+
