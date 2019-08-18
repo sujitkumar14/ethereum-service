@@ -10,6 +10,7 @@ func Init() {
 	v = viper.New()
 }
 
+//SetConfigName sets name for the config file
 func SetConfigName(name string) {
 	v.SetConfigName(name)
 }
