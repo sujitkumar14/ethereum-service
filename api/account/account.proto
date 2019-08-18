@@ -7,7 +7,7 @@ message BalanceRequest {
 }
 
 message BalanceResponse {
-    int64 balance = 1;
+    string balance = 1;
     Response reponse = 2;
 }
 
