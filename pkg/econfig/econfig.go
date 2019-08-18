@@ -15,6 +15,7 @@ func SetConfigName(name string) {
 	v.SetConfigName(name)
 }
 
+//AddConfigPath add the config path for the config file
 func AddConfigPath(path string) {
 	v.AddConfigPath(path)
 }
