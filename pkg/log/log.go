@@ -5,5 +5,5 @@ import (
 )
 
 func Debug(l ...interface{}) {
-	fmt.Println(l)
+	fmt.Println(l...)
 }

@@ -7,8 +7,8 @@ message BalanceRequest {
 }
 
 message BalanceResponse {
-    string balance = 1;
-    Response reponse = 2;
+    Response response = 1;
+    string balance = 2;
 }
 
 message Response {

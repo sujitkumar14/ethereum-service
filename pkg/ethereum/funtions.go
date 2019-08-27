@@ -18,6 +18,7 @@ func hexToAddress(address string) common.Address {
 func (e *Ethereum) GetBalance(address string) (balance *big.Int, err error) {
 
 	ctx := context.Background()
-	balance, err = e.conn.BalanceAt(ctx, hexToAddress(address), nil)
+	EthereumInstance := getInstance()
+	balance, err = EthereumInstance.conn.BalanceAt(ctx, hexToAddress(address), nil)
 	return
 }

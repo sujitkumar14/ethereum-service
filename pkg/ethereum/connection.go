@@ -19,6 +19,7 @@ func (e *Ethereum) CreateConnection() {
 	}
 
 	e.conn = conn
+	setInstance(e)
 }
 
 //Ping to test the Ethereum blockchain connection
