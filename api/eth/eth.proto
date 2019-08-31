@@ -1,6 +1,7 @@
+
 syntax="proto3";
 
-package account;
+package eth;
 
 message BalanceRequest {
     string address = 1;
@@ -9,6 +10,13 @@ message BalanceRequest {
 message BalanceResponse {
     Response response = 1;
     string balance = 2;
+}
+
+message CurrentBlockNumberRequest {}
+
+message CurrentBlockNumberResponse {
+    Response response = 1;
+    string block = 2;
 }
 
 message Response {
@@ -21,8 +29,8 @@ enum Status {
 }
 
 service Account {
+    rpc currentBlockNumber (CurrentBlockNumberRequest) returns (CurrentBlockNumberResponse);
     rpc getBalance (BalanceRequest) returns (BalanceResponse);
+
+
 }
-
-
-

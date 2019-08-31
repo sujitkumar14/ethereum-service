@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	server "eth-service/api/account"
+	EthServer "eth-service/api/eth"
 	"fmt"
 
 	"google.golang.org/grpc"
@@ -19,9 +19,11 @@ func main() {
 	}
 	defer conn.Close()
 
-	client := server.NewAccountClient(conn)
-	response, err := client.GetBalance(context.Background(), &server.BalanceRequest{
-		Address: "0x0000000000000000000000000000000000000000",
-	})
+	// client := server.NewAccountClient(conn)
+	ethClient := EthServer.NewAccountClient(conn)
+	// response, err := ethClient.GetBalance(context.Background(), &EthServer.BalanceRequest{
+	// 	Address: "0x0000000000000000000000000000000000000000",
+	// })
+	response, err := ethClient.CurrentBlockNumber(context.Background(), &EthServer.CurrentBlockNumberRequest{})
 	fmt.Println(response)
 }

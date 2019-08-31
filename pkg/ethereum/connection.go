@@ -1,4 +1,4 @@
-package ethereum
+package ethereumwrapper
 
 import (
 	"eth-service/pkg/econfig"

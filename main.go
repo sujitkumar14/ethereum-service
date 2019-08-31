@@ -1,10 +1,10 @@
 package main
 
 import (
-	proto "eth-service/api/account"
-	controller "eth-service/internal/controller/account"
+	EthProto "eth-service/api/eth"
+	EthController "eth-service/internal/controller/eth"
 	Econfig "eth-service/pkg/econfig"
-	"eth-service/pkg/ethereum"
+	ethereum "eth-service/pkg/ethereum"
 	"eth-service/pkg/log"
 	"net"
 
@@ -25,7 +25,7 @@ func startGrpcServer() {
 		log.Debug(err)
 	}
 	grpcServer := grpc.NewServer()
-	proto.RegisterAccountServer(grpcServer, &controller.Account{})
+	EthProto.RegisterAccountServer(grpcServer, &EthController.Eth{})
 	grpcServer.Serve(lis)
 	log.Debug("Its working")
 }

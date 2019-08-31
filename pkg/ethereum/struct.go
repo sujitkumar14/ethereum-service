@@ -1,4 +1,4 @@
-package ethereum
+package ethereumwrapper
 
 import (
 	"github.com/ethereum/go-ethereum/ethclient"
